@@ -1,8 +1,8 @@
 function Home(){
     return (
-        <div>
-            Teste
-        </div>
+        <main>
+            
+        </main>
     )
 }
 
