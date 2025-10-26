@@ -19,7 +19,9 @@ function Home(){
     const navigate = useNavigate();
     //função que avança a tela, considerando os valores inseridos em qntdCartas e modoJogo
     const avancaTela = () => {
-        navigate('/about');
+        if(qntdCartas == '') return alert("erro ao salvar qntd de cartas");
+        if(modoJogo == '') return alert("erro ao salvar modo de jogo");
+        navigate('/jogo');
     }
     
     return (
@@ -102,7 +104,6 @@ function Home(){
 
             { /* botão apenas ativa quando o modo de jogo e a quantidade de cartas estiverem setadas */ }
             <button 
-                disabled={ !(modoJogo && qntdCartas) }
                 onClick={avancaTela}>Iniciar jogo</button>
         </main>
     )
