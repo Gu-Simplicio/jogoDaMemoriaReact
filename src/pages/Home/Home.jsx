@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 function Home(){
@@ -13,7 +14,14 @@ function Home(){
     const alteraQntdCartas = (event) => {
         setQntdCartas(event.target.value);
     }
-
+    
+    //navegador de rotas
+    const navigate = useNavigate();
+    //função que avança a tela, considerando os valores inseridos em qntdCartas e modoJogo
+    const avancaTela = () => {
+        navigate('/about');
+    }
+    
     return (
         <main>
             <h1>Bem vindo ao jogo da memória!</h1>
@@ -93,7 +101,9 @@ function Home(){
             </ul> { /* lista dos modos de jogo*/ }
 
             { /* botão apenas ativa quando o modo de jogo e a quantidade de cartas estiverem setadas */ }
-            <button disabled={ !(modoJogo && qntdCartas) }>Iniciar jogo</button>
+            <button 
+                disabled={ !(modoJogo && qntdCartas) }
+                onClick={avancaTela}>Iniciar jogo</button>
         </main>
     )
 }
