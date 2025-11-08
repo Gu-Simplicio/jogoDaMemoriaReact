@@ -19,8 +19,13 @@ function Home(){
     const navigate = useNavigate();
     //função que avança a tela, considerando os valores inseridos em qntdCartas e modoJogo
     const avancaTela = () => {
+        // checa se as opções foram clicadas
         if(qntdCartas == '') return alert("erro ao salvar qntd de cartas");
         if(modoJogo == '') return alert("erro ao salvar modo de jogo");
+       
+        localStorage.setItem("qntdCartas", qntdCartas);
+        localStorage.setItem("modoJogo", modoJogo);
+
         navigate('/jogo');
     }
     
