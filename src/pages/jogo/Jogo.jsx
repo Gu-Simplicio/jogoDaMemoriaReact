@@ -46,10 +46,16 @@ function Jogo(){
 
     return(
         <main>
-            <Card 
-                idCard="1"
-                imgCard="card1"
-                tituloCard="Card um" />
+            {   
+                // exibe os cards já embaralhados
+                listaCards.map((card, index) => (
+                    <Card 
+                        idCard={index}
+                        imgCard={card.img}  
+                        tituloCard={card.titulo}
+                        />
+                ))
+            }
         </main>
     )
 }
