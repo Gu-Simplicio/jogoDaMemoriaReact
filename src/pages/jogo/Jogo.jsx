@@ -23,7 +23,10 @@ function Jogo(){
 
     return(
         <main>
-            <Card/>
+            <Card 
+                idCard="1"
+                imgCard="card1"
+                tituloCard="Card um" />
         </main>
     )
 }
